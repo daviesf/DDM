@@ -19,14 +19,21 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          appBar: AppBar(
-            title: Text("Seja bem-vindo(a)!"),
-            backgroundColor: Colors.red[800],
-            centerTitle: true,
-          ),
-          body: Center(
-            child: Column(
-              children: [
+            bottomNavigationBar: BottomAppBar(
+              color: Colors.red[800],
+              child: SizedBox(height: 50, child: Align(
+                child: Text ("Acompanhe conosco! 🐱",
+                style: TextStyle(fontSize: 15, color: Colors.white,),
+                textAlign: TextAlign.center,),
+              )),
+            ),
+            appBar: AppBar(
+              title: Text("Seja bem-vindo(a)!"),
+              backgroundColor: Colors.red[800],
+              centerTitle: true,
+            ),
+            body: Center(
+              child: Column(children: [
                 SizedBox(
                   child: Image.network(
                       "https://media.tenor.com/YjeDKHDpa6gAAAAd/cool-cat.gif"),
@@ -38,19 +45,17 @@ class MyApp extends StatelessWidget {
                 Text("Aqui você encontrará:",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 12)),
-                SizedBox(height: 10),
                 Padding(
-                    padding: EdgeInsets.all(30),
+                    padding: EdgeInsets.all(20),
                     child: Column(
                       children: [
                         topico("Gatos fofos"),
                         topico("Dicas de gatos"),
-                        topico("Receita de gato")
+                        topico("Manual do Gato"),
+                        topico("Gatos dos Seguidores")
                       ],
-                    ))
-              ],
-            ),
-          ),
-        ));
+                    )),
+              ]),
+            )));
   }
 }
