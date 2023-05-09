@@ -28,10 +28,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 Icons.calculate,
-                color: Colors.indigo,
+                color: Colors.indigo[800],
                 size: 200.0,
               ),
               Contador(),

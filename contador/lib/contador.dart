@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'class.dart';
 
 class Contador extends StatefulWidget {
   const Contador({super.key});
@@ -8,55 +9,67 @@ class Contador extends StatefulWidget {
 }
 
 class _ContadorState extends State<Contador> {
-  int contador = 0;
+  Class cont = Class();
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Column(
-          children: [
-            Text("Contador:"),
-            Row(
-              children: [
-                Column(
-                children: [
-                  ElevatedButton(onPressed: () {
-                  decrementa();
-                  setState(() {
-
-                  });
-                }, 
-                    
-                child: Text("-")),
-                ],
+    return Center(
+      child: Column(
+        children: [
+          Text("Contador:"),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    FloatingActionButton(
+                      backgroundColor: Colors.deepPurple,
+                      child: const Icon(Icons.remove),
+                      onPressed: () {
+                        setState(() {
+                          cont.decrementa();
+                        });
+                    })
+                  ],
+                ),
               ),
-              Column(
-                children: [
-                  Text("a"),
-                ],
+              Expanded(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: 30,
+                      height: 30,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.deepPurpleAccent[100]),
+                        child: Center(child: Text(cont.getContador().toString())),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              Column(
-                children: [
-                  ElevatedButton(onPressed: () {
-                incrementa();
-                setState(() {
-
-                });
-              }, 
-              child: Text("+"))
-                ],
-              )
-              ],
-            )
-          ],
-        ),
+              Expanded(
+                child: Column(
+                  children: [
+                    FloatingActionButton(
+                      backgroundColor: Colors.deepPurple,
+                      child: const Icon(Icons.add),
+                      onPressed: () {
+                        setState(() {
+                          cont.incrementa();
+                        });
+                    })
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text("Valor do contador: " + cont.getContador().toString())
+        ],
+      ),
     );
-  }
-
-  void decrementa() {
-    
-  }
-
-  void incrementa() {
-
   }
 }
