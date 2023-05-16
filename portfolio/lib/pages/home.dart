@@ -1,25 +1,26 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore, prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:navigation/basket.dart';
-import 'package:navigation/favorite.dart';
-import 'package:navigation/person.dart';
+import 'package:portfolio/pages/about.dart';
+import 'package:portfolio/pages/count.dart';
+import 'package:portfolio/pages/welcome.dart';
 
-class MyHome extends StatefulWidget {
-  const MyHome({super.key});
+
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<MyHome> createState() => _MyHomeState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomeState extends State<MyHome> {
+class _HomeState extends State<Home> {
   //atributo
   int _indice = 0;
 
   List<Widget> _telas = [
-    Person(),
-    Basket(),
-    Favorite(),
+    Welcome(),
+    Count(),
+    About(),
   ];
 
   //método
@@ -46,15 +47,15 @@ class _MyHomeState extends State<MyHome> {
       appBar: AppBar (title: Text("Home"),
       actions: [
         IconButton(onPressed: () {
-          Navigator.pushNamed(context, '/person');
+          Navigator.pushNamed(context, '/welcome');
         },
         icon: Icon(Icons.person)),
         IconButton(onPressed: () {
-          Navigator.pushNamed(context, '/basket');
+          Navigator.pushNamed(context, '/count');
         },
         icon: Icon(Icons.shopping_basket)),
         IconButton(onPressed: () {
-          Navigator.pushNamed(context, '/favorite');
+          Navigator.pushNamed(context, '/about');
         },
         icon: Icon(Icons.favorite)),
       ],
@@ -66,16 +67,16 @@ class _MyHomeState extends State<MyHome> {
         onTap: _itemClicado,
         items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: "Person",
+          icon: Icon(Icons.assessment_outlined),
+          label: "Welcome",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_basket),
-          label: "Basket",
+          icon: Icon(Icons.add_circle),
+          label: "Count",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
-          label: "Favorite",
+          icon: Icon(Icons.info),
+          label: "About",
         ),
       ],),
     );

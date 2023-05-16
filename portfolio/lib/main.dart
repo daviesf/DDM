@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:navigation/home.dart';
-import 'person.dart';
-import 'favorite.dart';
-import 'basket.dart';
+import 'pages/about.dart';
+import 'pages/count.dart';
+import 'pages/home.dart';
+import 'pages/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,12 +20,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const MyHome(),
       routes: {
-         '/': (context) => MyHome(),
-         '/person': (context) => Person(),
-         '/basket': (context) => Basket(),
-         '/favorite': (context) => Favorite(),
+         '/': (context) => Home(),
+         '/about': (context) => About(),
+         '/count': (context) => Count(),
+         '/welcome': (context) => Welcome(),
       },
     );
   }
