@@ -49,15 +49,15 @@ class _HomeState extends State<Home> {
         IconButton(onPressed: () {
           Navigator.pushNamed(context, '/welcome');
         },
-        icon: Icon(Icons.person)),
+        icon: Icon(Icons.assessment_outlined)),
         IconButton(onPressed: () {
           Navigator.pushNamed(context, '/count');
         },
-        icon: Icon(Icons.shopping_basket)),
+        icon: Icon(Icons.add_circle)),
         IconButton(onPressed: () {
           Navigator.pushNamed(context, '/about');
         },
-        icon: Icon(Icons.favorite)),
+        icon: Icon(Icons.info)),
       ],
       ),
       // ignore: prefer_const_literals_to_create_immutables
