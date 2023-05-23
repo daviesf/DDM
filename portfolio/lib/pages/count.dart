@@ -18,7 +18,9 @@ class _CountState extends State<Count> {
 
   void decrementa() {
     setState(() {
+      if (_contador > 0) {
       _contador--;
+    }
     });
   }
 

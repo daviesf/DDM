@@ -6,7 +6,9 @@ class Class {
   }
 
   void decrementa() {
-    _contador--;
+    if (_contador > 0) {
+      _contador--;
+    }
   }
 
   int getContador() {

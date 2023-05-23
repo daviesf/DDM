@@ -38,6 +38,7 @@ class Welcome extends StatelessWidget {
             children: [
               Image.network(
                 "https://media.tenor.com/YjeDKHDpa6gAAAAd/cool-cat.gif",
+                height: 160,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
