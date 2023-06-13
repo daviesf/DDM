@@ -16,6 +16,4 @@ class Produto {
   get cod => this._cod;
 
  set cod( value) => this._cod = value;
-
-
 }
