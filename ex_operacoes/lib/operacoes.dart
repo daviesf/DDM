@@ -17,6 +17,9 @@ class _OperacoesState extends State<Operacoes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Operações'),
+      ),
       body: Center(
         child: Column(
           children: [
