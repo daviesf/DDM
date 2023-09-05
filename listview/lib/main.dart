@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listview/lista.dart';
+import 'lista.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
+
+import 'aluno.dart';
 
 class MyLista extends StatefulWidget {
   const MyLista({super.key});
@@ -8,31 +12,32 @@ class MyLista extends StatefulWidget {
 }
 
 class _MyListaState extends State<MyLista> {
+
+  List<Aluno> lista = [];
+
   @override
   Widget build(BuildContext context) {
+    lista = [];
+    lista.add(Aluno(123, "Tania"));
+    lista.add(Aluno(456, "João"));
+    lista.add(Aluno(222, "José"));
+    lista.add(Aluno(333, "Maria"));
+
     return Scaffold(
       appBar: AppBar(title: const Text("Exemplo ListView")),
-      body: ListView(children: [
-        ListTile(
-          
-          title: Text("Teste"),
-          subtitle: Text("Testando..."),
-          leading: Icon(Icons.person),
-          trailing: Text('X'),
+      body: ListView.separated(
+        separatorBuilder: (BuildContext context, int index) => Divider(thickness: 4), 
+        itemCount: lista.length,
+        itemBuilder: (BuildContext context, int index) { 
+          return ListTile(
+            title: Text(lista[index].nome),
+            subtitle: Text(lista[index].ra.toString()),
+            leading: (Icon(Icons.abc)),
+            trailing: Text("T"),
+          );
+         }, 
+
         ),
-        ListTile(
-          title: Text("Teste2"),
-          subtitle: Text("Testando2..."),
-          leading: Icon(Icons.access_alarm_rounded),
-          trailing: Text('Y'),
-        ),
-        ListTile(
-          title: Text("Teste3"),
-          subtitle: Text("Testando3..."),
-          leading: Icon(Icons.account_balance),
-          trailing: Text('Z'),
-        )
-      ]),
     );
   }
 }
