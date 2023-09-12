@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'aluno_repository.dart';
 
 import 'aluno.dart';
 
@@ -13,25 +14,18 @@ class MyLista extends StatefulWidget {
 
 class _MyListaState extends State<MyLista> {
 
-  List<Aluno> lista = [];
-
   @override
   Widget build(BuildContext context) {
-    lista = [];
-    lista.add(Aluno(123, "Tania"));
-    lista.add(Aluno(456, "João"));
-    lista.add(Aluno(222, "José"));
-    lista.add(Aluno(333, "Maria"));
-
+    final listaAlunos = AlunoRepository.getListaAlunos;
     return Scaffold(
       appBar: AppBar(title: const Text("Exemplo ListView")),
       body: ListView.separated(
         separatorBuilder: (BuildContext context, int index) => Divider(thickness: 4), 
-        itemCount: lista.length,
+        itemCount: listaAlunos.length,
         itemBuilder: (BuildContext context, int index) { 
           return ListTile(
-            title: Text(lista[index].nome),
-            subtitle: Text(lista[index].ra.toString()),
+            title: Text(listaAlunos[index].nome),
+            subtitle: Text(listaAlunos[index].ra.toString()),
             leading: (Icon(Icons.abc)),
             trailing: Text("T"),
           );
