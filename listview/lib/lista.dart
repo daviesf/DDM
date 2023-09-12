@@ -17,7 +17,10 @@ class _MyListaState extends State<MyLista> {
     final listaAlunos = AlunoRepository.getListaAlunos;
     return Scaffold(
       appBar: AppBar(title: const Text("Exemplo ListView")),
-      body: ListView.separated(
+      body: Column(children: [
+        
+      ListView.separated(
+        shrinkWrap: true,
         separatorBuilder: (BuildContext context, int index) => Divider(thickness: 2), 
         itemCount: listaAlunos.length,
         itemBuilder: (BuildContext context, int index) { 
@@ -29,6 +32,13 @@ class _MyListaState extends State<MyLista> {
          }, 
         padding: EdgeInsets.all(7),
         ),
+        Divider(thickness: 2,),
+        ElevatedButton(onPressed: () {
+          Navigator.pushNamed(context,'/');
+        },
+        child: Text("Voltar"),
+        )
+        ],)
     );
   }
 }
