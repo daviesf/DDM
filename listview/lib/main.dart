@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listview/cadastro.dart';
 import 'lista.dart';
-import 'cadastro.dart';
 
 void main() {
   runApp(const MyApp());

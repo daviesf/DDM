@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'aluno_repository.dart';
 
-import 'aluno.dart';
-
 class MyLista extends StatefulWidget {
   const MyLista({super.key});
 
