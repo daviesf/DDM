@@ -18,17 +18,16 @@ class _MyListaState extends State<MyLista> {
     return Scaffold(
       appBar: AppBar(title: const Text("Exemplo ListView")),
       body: ListView.separated(
-        separatorBuilder: (BuildContext context, int index) => Divider(thickness: 4), 
+        separatorBuilder: (BuildContext context, int index) => Divider(thickness: 2), 
         itemCount: listaAlunos.length,
         itemBuilder: (BuildContext context, int index) { 
           return ListTile(
             title: Text(listaAlunos[index].nome),
             subtitle: Text(listaAlunos[index].ra.toString()),
-            leading: (Icon(Icons.abc)),
-            trailing: Text("T"),
+            leading: CircleAvatar (child: Text(listaAlunos[index].nome[0])),
           );
          }, 
-
+        padding: EdgeInsets.all(7),
         ),
     );
   }
