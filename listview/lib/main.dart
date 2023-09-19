@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listview/altera.dart';
 import 'package:listview/cadastro.dart';
 import 'lista.dart';
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       // home: MyLista()
       routes: {
       '/':(context) => MyCadastro(),
-      '/lista':(context) => MyLista()
+      '/lista':(context) => MyLista(),
+      // '/altera':(context) => AlteraAluno()
       },
     );
   }

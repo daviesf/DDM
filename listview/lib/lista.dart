@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'altera.dart';
+import 'aluno.dart';
 import 'aluno_repository.dart';
 
 class MyLista extends StatefulWidget {
@@ -28,6 +30,23 @@ class _MyListaState extends State<MyLista> {
             title: Text(listaAlunos[index].nome),
             subtitle: Text(listaAlunos[index].ra.toString()),
             leading: CircleAvatar (child: Text(listaAlunos[index].nome[0])),
+            trailing: SizedBox (
+              width: 70,
+              child: Row (children: [
+                Expanded(child: IconButton(onPressed: () {
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context) {
+                    return AlteraAluno(listaAlunos[index], index);
+                  },));
+                }, icon: Icon(Icons.edit))),
+                Expanded(child: IconButton(onPressed: () {
+                  Aluno al = listaAlunos[index];
+                  AlunoRepository.remover(al);
+                  setState(() {
+                    
+                  });
+                }, icon: Icon(Icons.delete))),
+              ],)),
           );
          }, 
         padding: EdgeInsets.all(7),

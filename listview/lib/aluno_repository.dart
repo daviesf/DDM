@@ -10,4 +10,8 @@ class AlunoRepository {
   void adicionar(Aluno al) {
     _listaAlunos.add(al);
   }
+
+  static void remover(Aluno al) {
+    _listaAlunos.remove(al);
+  }
 }
