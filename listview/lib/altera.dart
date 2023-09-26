@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, unused_field, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'aluno_repository.dart';
 import 'aluno.dart';
