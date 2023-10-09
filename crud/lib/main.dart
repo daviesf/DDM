@@ -1,4 +1,6 @@
+import 'lista.dart';
 import 'package:flutter/material.dart';
+import 'cadastro.dart';
 
 MaterialColor customPrimaryColor = MaterialColor(
   0xFF81D3F6, // Cor primária (correspondente a RGB: 129, 211, 246)
@@ -32,6 +34,10 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const MyHomePage(),
+      routes: {
+        '/myPrato': (context) => const MyPrato(),
+        '/lista': (context) => const MyLista(),
+      },
       debugShowCheckedModeBanner: false
     );
   }
@@ -71,10 +77,10 @@ class MyHomePage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () {
-                // Navegue para a página de cadastro aqui
+                Navigator.pushNamed(context, '/myPrato');
               },
               icon: Icon(Icons.add),
-              label: Text('Fazer Pedido'),
+              label: Text('Fazer Cadastro de Prato'),
             ),
           ],
         ),

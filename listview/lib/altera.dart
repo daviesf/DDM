@@ -15,13 +15,15 @@ class AlteraAluno extends StatefulWidget {
 }
 
 class _AlteraAlunoState extends State<AlteraAluno> {
-  int ra = 0;
+  int cod = 0;
+  int preco = 0;
   String nome = "";
-  List listaAlunos = AlunoRepository.getListaAlunos;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  TextEditingController campoRa = TextEditingController();
+  String categoria = "";
+  TextEditingController campoCod = TextEditingController();
+  TextEditingController campoPreco = TextEditingController();
   TextEditingController campoNome = TextEditingController();
-  AlunoRepository listaAl = AlunoRepository();
+  TextEditingController campoCategoria = TextEditingController();
+  PratoRepository listaPr = PratoRepository();
 
   @override
   Widget build(BuildContext context) {
