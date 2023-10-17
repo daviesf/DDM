@@ -8,10 +8,11 @@ class TodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Lista de Tarefas'),
-          backgroundColor: Colors.pinkAccent, // Cor alterada para fúcsia
+          backgroundColor: Colors.pinkAccent,
         ),
         body: TodoList(),
       ),
@@ -47,12 +48,15 @@ class _TodoListState extends State<TodoList> {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                addTask();
-              },
-              style: ElevatedButton.styleFrom(primary: Colors.pinkAccent),
-              child: Text('Adicionar', style: TextStyle(color: Colors.white)),
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  addTask();
+                },
+                style: ElevatedButton.styleFrom(primary: Colors.pinkAccent),
+                child: Text('Adicionar', style: TextStyle(color: Colors.white)),
+              ),
             ),
           ],
         ),
@@ -66,7 +70,7 @@ class _TodoListState extends State<TodoList> {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Text(tasks[index]),
-                leading: Icon(Icons.description, color: Colors.pinkAccent),
+                leading: Icon(Icons.featured_play_list_rounded, color: Colors.pinkAccent),
                 trailing: Icon(Icons.check_box_outline_blank, color: Colors.pinkAccent),
               );
             },
